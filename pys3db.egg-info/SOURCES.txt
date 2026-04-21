@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+pys3db.egg-info/PKG-INFO
+pys3db.egg-info/SOURCES.txt
+pys3db.egg-info/dependency_links.txt
+pys3db.egg-info/top_level.txt

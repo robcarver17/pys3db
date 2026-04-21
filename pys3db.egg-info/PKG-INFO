@@ -1,3 +1,16 @@
+Metadata-Version: 2.4
+Name: pys3db
+Version: 1.0.0
+Summary: Simple python SQLLITE3 wrapper
+Home-page: https://github.com/robcarver17/pys3db
+Author: Robert Carver
+License-File: LICENSE
+Dynamic: author
+Dynamic: description
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: summary
+
 Yet another way to wrap SQQLITE3* so you don't need to learn SQL.
 
 * other databases are available and could be used
