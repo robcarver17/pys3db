@@ -69,17 +69,6 @@ class FactoryForManagingDataClasses:
         return self.conforming_dataclass(**dict_of_original_types)
 
 
-def from_dict_of_original_types_to_object_for_conforming_dataclass(
-    conforming_dataclass_instance,
-):
-    type_of_class = type(conforming_dataclass_instance)
-    fields_in_class = dataclass_fields(type_of_class)
-    output_dict = {}
-    for field in fields_in_class:
-        output_dict[field.name] = getattr(conforming_dataclass_instance, field.name)
-
-    return output_dict
-
 
 def get_translator_for_conforming_dataclass(
     conforming_dataclass,

@@ -156,6 +156,12 @@ class PyDb(object):
         list_of_filters: Union[Filter, List[Filter], ListOfFilters] = no_filters,
         get_minimum: bool = False,
     ):
+        if self.table_does_not_exist():
+            raise NoMatchingDataFound(
+                "Can't find min or max, no records match filter %s"
+                % str(list_of_filters)
+            )
+
         if get_minimum:
             select_sql = create_minimum_value_sql(
                 field_name=field_name, table=self.table, list_of_filters=list_of_filters
@@ -300,6 +306,9 @@ class PyDb(object):
     def get_count_of_matching_records(
         self, list_of_filters: Union[Filter, List[Filter], ListOfFilters] = no_filters
     ):
+        if self.table_does_not_exist():
+            return 0
+
         try:
             select_sql = create_sql_get_first_field_only_in_raw_form(
                 table=self.table, list_of_filters=list_of_filters
